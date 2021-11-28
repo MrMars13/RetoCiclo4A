@@ -1,4 +1,4 @@
-import {injectable, /* inject, */ BindingScope} from '@loopback/core';
+import { /* inject, */ BindingScope, injectable} from '@loopback/core';
 
 @injectable({scope: BindingScope.TRANSIENT})
 export class NotificacionService {
@@ -11,7 +11,7 @@ export class NotificacionService {
   NotificacionesSMS():void{
     console.log("hola");
     const accountSid = 'ACab27ac8cc28762df0da579e0dbfce6ac'; // Your Account SID from www.twilio.com/console
-const authToken = '2518ac2a34f631bf034354fba26f1f5a'; // Your Auth Token from www.twilio.com/console
+    const authToken = '2518ac2a34f631bf034354fba26f1f5a'; // Your Auth Token from www.twilio.com/console
 
 const twilio = require('twilio');
 const client = new twilio(accountSid, authToken);

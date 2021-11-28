@@ -1,4 +1,4 @@
-import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Entity, hasMany, model, property} from '@loopback/repository';
 import {MensajesEmpleado} from './mensajes-empleado.model';
 
 @model()
@@ -39,6 +39,12 @@ export class Empleado extends Entity {
     required: true,
   })
   Email: string;
+
+  @property({
+    type: 'string',
+    required: false,
+  })
+  clave: string;
 
   @property({
     type: 'string',
