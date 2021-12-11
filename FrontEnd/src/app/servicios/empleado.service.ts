@@ -41,7 +41,7 @@ token: String ='';
   EliminarEmpleado(id: string): Observable<any>{
     return this.http.delete(`${this.url}/empleados/${id}`,{
       headers: new HttpHeaders({
-        'Authorization':`Bearer${this.token}`
+        'Authorization':`Bearer ${this.token}`
       })
     })
   }
