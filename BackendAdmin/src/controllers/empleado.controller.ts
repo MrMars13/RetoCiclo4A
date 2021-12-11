@@ -20,6 +20,7 @@ import {EmpleadoRepository} from '../repositories';
 import {AutenticacionService, NotificacionService} from '../services';
 const fetch = require('node-fetch');    // Nuevo, importanción del node-fecth
 
+
 export class EmpleadoController {
   constructor(
     @repository(EmpleadoRepository)
@@ -57,7 +58,7 @@ export class EmpleadoController {
     }
   }
 
-
+  @authenticate("admin")
   @post('/empleados')
   @response(200, {
     description: 'Empleado model instance',
@@ -92,6 +93,7 @@ export class EmpleadoController {
     return p;
   }
 
+  
   @get('/empleados/count')
   @response(200, {
     description: 'Empleado model count',

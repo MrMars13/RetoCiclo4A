@@ -54,7 +54,7 @@ export class Empleado extends Entity {
 
   @property({
     type: 'date',
-    required: true,
+    required: false,
   })
   FechaNacimiento: string;
 
@@ -66,18 +66,19 @@ export class Empleado extends Entity {
 
   @property({
     type: 'number',
-    required: true,
+    required: false,
   })
   EsDirectivo: number;
 
   @property({
     type: 'number',
-    required: true,
+    required: false,
   })
   EsCliente: number;
 
   @property({
     type: 'string',
+    required: false,
   })
   empresaId?: string;
 
