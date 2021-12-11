@@ -10,19 +10,43 @@
 </head>
 
 <body>
-    <div class="imag">
-        <div class="form-group">
-            <a routerLink="/administracion/crear-empleado" class="btn">Nuevo Empleado</a>
-            <table class="table responsive">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Celular</th>
-                        <th>Correo</th>
-                    </tr>
+<div class="imag">
+<div class="form-group container"> 
+    <a routerLink="/administracion/crear-empleado" class="btn">Nuevo Empleado</a>
+    <table class="table responsive">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Celular</th>
+                <th>Correo</th>
+            </tr>
+         
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of listadoRegistros">
+                <td>
+                    {{p.Nombres}}
+                </td>
+                <td>
+                    {{p.Apellidos}}
+                </td>
+                <td>
+                    {{p.Telefono}}
+                </td>
+                <td>
+                    {{p.Email}}
+                </td>
+                <td>
+                    <a routerLink="/administracion/editar-empleado/{{p.id}}" class="btn">Editar Empleado</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
 
+</body>
                 </thead>
                 <tbody>
                     <tr *ngFor="let p of listadoRegistros">
