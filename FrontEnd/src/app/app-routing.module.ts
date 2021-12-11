@@ -36,8 +36,14 @@ const routes: Routes = [
     loadChildren: ()=> import("./modulos/pedidos/pedidos.module").then(x => x.PedidosModule)
   },
   {
-    path:'**',
+    path:'not-found',
     component:ErrorComponent
+  },
+  {
+    
+      path: '**',
+      redirectTo:'/not-found'
+    
   }
 ];
 
