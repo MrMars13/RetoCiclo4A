@@ -1,5 +1,12 @@
-export class ModeloProducto{
+export class ModeloEmpleado{
     id?: string;
-    nombre?: string;
-    correo?: string;
+    Nombres?: string;
+    Apellidos?:string;
+    Edad?:string;
+    Telefono?: string;
+    Email?: string;
+    Direccion?: string;
+    Sueldo?: number;
+  
+
 }

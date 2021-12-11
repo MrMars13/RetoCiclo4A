@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BuscarEmpleadoComponent } from './empleado/buscar-empleado/buscar-empleado.component';
 import { CrearEmpleadoComponent } from './empleado/crear-empleado/crear-empleado.component';
 import { EditarEmpleadoComponent } from './empleado/editar-empleado/editar-empleado.component';
 
@@ -9,8 +10,12 @@ const routes: Routes = [
     component: CrearEmpleadoComponent
   },
   {
-    path: 'editar-empleado',
+    path: 'editar-empleado/:id',
     component: EditarEmpleadoComponent
+  },
+  {
+    path: "listar-empleados",
+    component:BuscarEmpleadoComponent
   }
 ];
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CrearEmpleadoComponent } from './modulos/administracion/empleado/crear-empleado/crear-empleado.component';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { FormularioEmpleadoComponent } from './plantilla/formulario-empleado/formulario-empleado.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path:"formulario-empleado",
     component: FormularioEmpleadoComponent
+  },
+  {
+    path:"crear-empleado",
+    component: CrearEmpleadoComponent
   },
   {
     path: 'seguridad',

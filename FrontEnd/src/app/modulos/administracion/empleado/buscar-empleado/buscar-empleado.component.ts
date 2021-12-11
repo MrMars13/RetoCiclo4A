@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModeloEmpleado } from 'src/app/modelos/empleado.modelo';
+import { EmpleadoService } from 'src/app/servicios/empleado.service';
 
 @Component({
   selector: 'app-buscar-empleado',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarEmpleadoComponent implements OnInit {
 
-  constructor() { }
+listadoRegistros: ModeloEmpleado[] = [];
+
+  constructor(private empleadoServicio: EmpleadoService) { }
 
   ngOnInit(): void {
+    this.ObtenerListadoProductos();
+  }
+
+  ObtenerListadoProductos(){
+    this.empleadoServicio.ObtenerRegistros().subscribe((datos:ModeloEmpleado[])=>{
+      this.listadoRegistros = datos;
+    })
   }
 
 }

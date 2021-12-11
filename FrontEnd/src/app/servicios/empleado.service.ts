@@ -7,7 +7,7 @@ import { SeguridadService } from './seguridad.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductoService {
+export class EmpleadoService {
 url = 'http://localhost:3000'
 token: String ='';
 
@@ -18,26 +18,29 @@ token: String ='';
   ObtenerRegistros(): Observable<ModeloEmpleado[]>{
     return this.http.get<ModeloEmpleado[]>(`${this.url}/empleados`);
   }
-}
-  /*CrearEmpleado(empleado: ModeloEmpleado): Observable<ModeloEmpleado>{
-    return this.http.post<ModeloEmpleado>(`${this.url}/empleados`, empleado{
-      Headers: new HttpHeaders({
-        'Authorization':`Bearer${this.token}`
+  ObtenerRegistroPorId(id: string): Observable<ModeloEmpleado>{
+    return this.http.get<ModeloEmpleado>(`${this.url}/empleados/${id}`);
+  }
+
+  CrearEmpleado(empleado: ModeloEmpleado): Observable<ModeloEmpleado>{
+    return this.http.post<ModeloEmpleado>(`${this.url}/empleados`, empleado, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
       })
     })
   }
 
   ActualizarEmpleado(empleado: ModeloEmpleado): Observable<ModeloEmpleado>{
-    return this.http.put<ModeloEmpleado>(`${this.url}/empleados`,empleado, {
-      Headers: new HttpHeaders({
-        'Authorization':`Bearer${this.token}`
+    return this.http.put<ModeloEmpleado>(`${this.url}/empleados/${empleado.id}`, empleado, {
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${this.token}`
+        })
       })
-    })
   }
 
   EliminarEmpleado(id: string): Observable<any>{
     return this.http.delete(`${this.url}/empleados/${id}`,{
-      Headers: new HttpHeaders({
+      headers: new HttpHeaders({
         'Authorization':`Bearer${this.token}`
       })
     })
