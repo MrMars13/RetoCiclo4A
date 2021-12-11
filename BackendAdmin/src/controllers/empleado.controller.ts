@@ -58,7 +58,7 @@ export class EmpleadoController {
     }
   }
 
-  @authenticate("admin")
+  @authenticate.skip()
   @post('/empleados')
   @response(200, {
     description: 'Empleado model instance',
@@ -93,7 +93,6 @@ export class EmpleadoController {
     return p;
   }
 
-  
   @get('/empleados/count')
   @response(200, {
     description: 'Empleado model count',
@@ -142,6 +141,7 @@ export class EmpleadoController {
     return this.empleadoRepository.updateAll(empleado, where);
   }
 
+  @authenticate.skip()
   @get('/empleados/{id}')
   @response(200, {
     description: 'Empleado model instance',
