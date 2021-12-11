@@ -4,51 +4,49 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    
+
     <link rel="stylesheet" type="text/css" href="buscar-empleado.component.css">
     <title>Empleado</title>
 </head>
 
 <body>
-<div class="imag">
-<div class="form-group"> 
-    <a routerLink="/administracion/crear-empleado" class="btn">Nuevo Empleado</a>
-    <table class="table responsive">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>Celular</th>
-                <th>Correo</th>
-            </tr>
-         
-        </thead>
-        <tbody>
-            <tr *ngFor="let p of listadoRegistros">
-                <td>
-                    {{p.Nombres}}
-                </td>
-                <td>
-                    {{p.Apellidos}}
-                </td>
-                <td>
-                    {{p.Telefono}}
-                </td>
-                <td>
-                    {{p.Email}}
-                </td>
-                <td>
-                    <a routerLink="/administracion/editar-empleado/{{p.id}}" class="btn">Editar Empleado</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div>
+    <div class="imag">
+        <div class="form-group">
+            <a routerLink="/administracion/crear-empleado" class="btn">Nuevo Empleado</a>
+            <table class="table responsive">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Celular</th>
+                        <th>Correo</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of listadoRegistros">
+                        <td>
+                            {{p.Nombres}}
+                        </td>
+                        <td>
+                            {{p.Apellidos}}
+                        </td>
+                        <td>
+                            {{p.Telefono}}
+                        </td>
+                        <td>
+                            {{p.Email}}
+                        </td>
+                        <td>
+                            <a routerLink="/administracion/editar-empleado/{{p.id}}" class="btn">Editar Empleado</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </body>
 
 </html>
-
-

@@ -18,6 +18,7 @@ token: String ='';
   ObtenerRegistros(): Observable<ModeloEmpleado[]>{
     return this.http.get<ModeloEmpleado[]>(`${this.url}/empleados`);
   }
+  
   ObtenerRegistroPorId(id: string): Observable<ModeloEmpleado>{
     return this.http.get<ModeloEmpleado>(`${this.url}/empleados/${id}`);
   }
@@ -45,8 +46,5 @@ token: String ='';
       })
     })
   }
-
-
- 
 
 }

@@ -1,8 +1,8 @@
 html{
  
     background: url("desk.jpg") ;
-	background-size: cover;
-    min-height: 100%;
+	background-size: contain;
+    max-height: 100%;
 }
 
 body{
@@ -10,13 +10,12 @@ body{
 }
 
 .imag{   
-    background-color: white;
+    background-color: transparent;
     max-width: 1500px;   
     margin: auto ;
     padding: 40px;
-    color: #858b8e;
-    box-shadow: 6px 6px 6px rgba(0,0,0,0.2);  
-   
+    color: white;
+    box-shadow: 6px 6px 6px rgba(0,0,0,0.2);    
 }
 
 #advanced-search-form h2{
@@ -81,4 +80,9 @@ body{
     #advanced-search-form h2{
         text-align: center;
     }
+}
+
+table{
+    max-height: 100%;
+    background-color: transparent;
 }

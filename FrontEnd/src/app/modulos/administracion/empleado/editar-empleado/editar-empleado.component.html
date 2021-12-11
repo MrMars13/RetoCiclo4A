@@ -2,87 +2,65 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-  
-    <link rel="stylesheet" type="text/css" href="editar-empleado.component.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="editar-empleado.component.css" />
     <title>Empleado</title>
 </head>
 
-
-
-
 <body>
     <div class="imag">
-        <h2>Crear Empleado</h2>
-        <form  [formGroup]="fgValidador" methOD="post"   (ngSubmit)="EditarEmpleado()">  
-                    <input type= "hidden" formcontrolName="id"/>        
-                
-                    <div class="form-group" class="col-md-11" >
-                        <label for="Nombres" class="active">Nombres</label>
-                        <input formcontrolName="Nombres" type="text" class="form-control" placeholder="Nombres" id="Nombres">
-                    </div>           
-                                 
-                    <div class="form-group" class="col-md-11 ">
-                        <label for="Apellidos" class="active">Apellidos</label>
-                        <input formcontrolName="Apellidos" type="text" class="form-control" placeholder="Apellidos" id="Apellidos">
-                    </div>
-                    <div class="form-group" class="col-md-11">
-                        <label for="Email" class="active">Email</label>
-                        <input formcontrolName="Email" type="text" class="form-control" placeholder="Email" id="Email" required>
-                </div>  
-                <tr> 
+        <h2>Editar Empleado</h2>
+        <form [formGroup]="fgValidador" (ngSubmit)="EditarEmpleado()" method="POST" >
+            <div class="form-group" class="col-md-11">
+                <label for="Nombres" class="active">Nombres</label>
+                <input formControlName="Nombres" type="text" class="form-control" placeholder="Nombres" id="Nombres"required/>
+            </div>
 
-                    <td>
-                        <div class="form-group" >
-                            <label for="Telefono" class="active">Celular</label>
-                            <input formcontrolName="Telefono" type="text" class="form-control" placeholder="Celular" id="Telefono" required>
-                        </div>
-                      
-                    </td>  
-                    
-                    <td>
-                        <div class="form-group" >
-                            <label for="Edad" class="active">Edad</label>
-                            <input formcontrolName="Edad" type="text" class="form-control" placeholder="Edad" id="Edad" >
-                        </div>            
-                    </td>  
-                    
-                </tr>      
-                <tr> 
-    
-                    <td>
-                        <div class="form-group" >
-                            <label for="Direccion" class="active">Dirección</label>
-                            <input formcontrolName="Direccion" type="text" class="form-control" placeholder="Dirección" id="Direccion" >
-                        </div>
-                      
-                    </td>               
-                               
-                    <td>
-                        <div class="form-group" >
-                            <label for="Sueldo" class="active">Sueldo</label>
-                            <input formcontrolName="Sueldo" type="number" class="form-control" placeholder="Sueldo" id="Sueldo" >
-                    </div> 
-                    </td>
-                    
-                    
-                </tr> 
-           
-        
-          
-                <div class="form-group">
-                    <button [disabled]="!fgValidador.valid"  class="btn btn-primary" type="submit"> Aceptar</button>
-                </div>     
+            <div class="form-group" class="col-md-11">
+                <label for="Apellidos" class="active">Apellidos</label>
+                <input formControlName="Apellidos" type="text" class="form-control" placeholder="Apellidos" id="Apellidos" required/>
+            </div>
+            <div class="form-group" class="col-md-11">
+                <label for="Email" class="active">Email</label>
+                <input formControlName="Email" type="text" class="form-control" placeholder="Email" id="Email" required />
+            </div>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="Telefono" class="active">Celular</label>
+                        <input formControlName="Telefono" type="text" class="form-control" placeholder="Telefono" id="Telefono" required />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="Edad" class="active">Edad</label>
+                        <input formControlName="Edad" type="text" class="form-control" placeholder="Edad" id="Edad" required/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="Direccion" class="active">Dirección</label>
+                        <input formControlName="Direccion" type="text" class="form-control" placeholder="Direccion" id="Direccion" required />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="Sueldo" class="active">Sueldo</label>
+                        <input formControlName="Sueldo" type="number" class="form-control" placeholder="Sueldo" id="Sueldo" required/>
+                    </div>
+                </td>
+            </tr>
+            <div class="form-group">
+                <button [disabled]="!fgValidador.valid" class="btn btn-primary" type="submit">
+                    Guardar
+                </button>
+            </div>
         </form>
-        
-          
-        
     </div>
 </body>
 
-    
-
 </html>
-
-

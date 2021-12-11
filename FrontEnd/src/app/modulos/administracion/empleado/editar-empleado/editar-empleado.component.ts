@@ -11,8 +11,8 @@ import { EmpleadoService } from 'src/app/servicios/empleado.service';
   styleUrls: ['./editar-empleado.component.css']
 })
 export class EditarEmpleadoComponent implements OnInit {
-id:string = '';
-  
+
+  id:string = '';
   fgValidador: FormGroup = this.fb.group({
     'id': ['', [Validators.required]],
     'Nombres': ['', [Validators.required]],
@@ -24,15 +24,11 @@ id:string = '';
     'Sueldo': ['', [Validators.required]]   
   });
 
-
   constructor(private fb: FormBuilder,
     private servicioEmpleado: EmpleadoService,
     private router: Router,
     private route: ActivatedRoute) { } 
 
-
-
-  
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"];
     this.BuscarEmpleado();
